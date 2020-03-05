@@ -10,7 +10,6 @@ class KLineEntity extends KEntity {
   double close;
   double vol;
   double amount;
-  int count;
   int id;
 
   KLineEntity.fromJson(Map<String, dynamic> json) {
@@ -20,8 +19,7 @@ class KLineEntity extends KEntity {
     close = (json['close'] as num)?.toDouble();
     vol = (json['vol'] as num)?.toDouble();
     amount = (json['amount'] as num)?.toDouble();
-    count = (json['count'] as num)?.toInt();
-    id = (json['id'] as num)?.toInt();
+    id = (json['timeStamp'] as num)?.toInt();
   }
 
   Map<String, dynamic> toJson(){
@@ -33,7 +31,6 @@ class KLineEntity extends KEntity {
     data['low'] = this.low;
     data['vol'] = this.vol;
     data['amount'] = this.amount;
-    data['count'] = this.count;
     return data;
   }
 

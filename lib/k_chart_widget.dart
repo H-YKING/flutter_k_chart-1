@@ -200,6 +200,6 @@ class _KChartWidgetState extends State<KChartWidget>  with SingleTickerProviderS
   }
 
   String getDate(int date) {
-    return dateFormat(DateTime.fromMillisecondsSinceEpoch(date * 1000), [yy, '-', mm, '-', dd, ' ', HH, ':', nn]);
+    return dateFormat(DateTime.fromMillisecondsSinceEpoch(date), [yy, '-', mm, '-', dd, ' ', HH, ':', nn]);
   }
 }
