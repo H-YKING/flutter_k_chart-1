@@ -1,6 +1,3 @@
-
-
-
 import '../entity/k_entity.dart';
 
 class KLineEntity extends KEntity {
@@ -19,10 +16,10 @@ class KLineEntity extends KEntity {
     close = (json['close'] as num)?.toDouble();
     vol = (json['vol'] as num)?.toDouble();
     amount = (json['amount'] as num)?.toDouble();
-    id = (json['timeStamp'] as num)?.toInt();
+    id = (json['id'] as num)?.toInt();
   }
 
-  Map<String, dynamic> toJson(){
+  Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['open'] = this.open;

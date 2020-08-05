@@ -37,14 +37,14 @@ abstract class BaseChartPainter extends CustomPainter {
 
   BaseChartPainter(
       {@required this.datas,
-      @required this.scaleX,
-      @required this.scrollX,
-      @required this.isLongPress,
-      @required this.selectX,
-      this.mainState,
-      this.volState,
-      this.secondaryState,
-      this.isLine}) {
+        @required this.scaleX,
+        @required this.scrollX,
+        @required this.isLongPress,
+        @required this.selectX,
+        this.mainState,
+        this.volState,
+        this.secondaryState,
+        this.isLine}) {
     mItemCount = datas?.length ?? 0;
     mDataLen = mItemCount * mPointWidth;
     initFormats();
@@ -69,6 +69,7 @@ abstract class BaseChartPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
+    canvas.clipRect(Rect.fromLTRB(0, 0, size.width, size.height));
     mDisplayHeight = size.height - ChartStyle.topPadding - ChartStyle.bottomDateHigh;
     mWidth = size.width;
     mMarginRight = (mWidth / ChartStyle.gridColumns - mPointWidth) / scaleX;
@@ -134,6 +135,7 @@ abstract class BaseChartPainter extends CustomPainter {
     if (secondaryState != SecondaryState.NONE){
       mSecondaryRect = Rect.fromLTRB(0, (mVolRect?.bottom??mMainRect.bottom )+ ChartStyle.childPadding, mWidth, (mVolRect?.bottom??mMainRect.bottom)  + secondaryHeight);
     }
+
 
   }
 

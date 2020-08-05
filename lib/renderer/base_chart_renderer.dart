@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_k_chart/chart_style.dart';
 import 'package:flutter_k_chart/utils/number_util.dart';
@@ -22,9 +21,9 @@ abstract class BaseChartRenderer<T> {
 
   BaseChartRenderer(
       {@required this.chartRect,
-      @required this.maxValue,
-      @required this.minValue,
-      @required this.topPadding}) {
+        @required this.maxValue,
+        @required this.minValue,
+        @required this.topPadding}) {
     if (maxValue == minValue) {
       maxValue += 0.5;
       minValue -= 0.5;
